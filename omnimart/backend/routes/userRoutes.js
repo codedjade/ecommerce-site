@@ -1,17 +1,10 @@
 const express = require('express');
-const router = express.Router();
-const {
-  registerUser,
-  loginUser,
-  getUsers,
-  updateUserRole,
-  deleteUser,
-} = require('../controllers/userController');
+const { getAllUsers, registerUser, loginUser } = require('../controllers/userController'); // Make sure these are correctly imported
 
-router.post('/register', registerUser);
-router.post('/login', loginUser);
-router.get('/users', getUsers);
-router.put('/user/:id', updateUserRole);
-router.delete('/user/:id', deleteUser);
+const router = express.Router();
+
+router.get('/users', getAllUsers); // Ensure this function exists and is correctly imported
+router.post('/register', registerUser); // Ensure this function exists
+router.post('/login', loginUser); // Ensure this function exists
 
 module.exports = router;

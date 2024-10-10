@@ -1,12 +1,18 @@
 // src/components/Home.jsx
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import LogoutButton from './LogoutButton';
 import { Link } from 'react-router-dom';
+import { fetchProducts } from '../features/productSlice'; // Import your fetchProducts action
 
 const Home = () => {
+  const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.users.currentUser);
   const products = useSelector((state) => state.products.products); // Assuming products are in the state
+
+  useEffect(() => {
+    dispatch(fetchProducts()); // Fetch products on component mount
+  }, [dispatch]);
 
   return (
     <div className="home-container min-h-screen bg-gray-900 flex flex-col items-center p-6">
@@ -20,7 +26,7 @@ const Home = () => {
         {products.map(product => (
           <div key={product.id} className="border rounded-lg shadow-lg p-4 bg-gray-800 hover:shadow-xl transition duration-300">
             <h3 className="text-lg font-bold text-white mb-2">{product.name}</h3>
-            <p className="text-gray-400 mb-2">Price: ${product.price.toFixed(2)}</p>
+            <p className="text-gray-400 mb-2">Price: ${!isNaN(product.price) ? Number(product.price).toFixed(2) : 'N/A'}</p>
             <p className="text-gray-400 mb-2">Seller: {product.sellerName}</p>
             <p className="text-gray-400 mb-4">Contact: {product.sellerContact}</p>
             <Link 

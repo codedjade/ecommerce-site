@@ -10,7 +10,7 @@ const CartPage = () => {
 
   // Calculate total price
   const totalPrice = cartItems.reduce((total, product) => {
-    const productPrice = product.price || 0; // Default to 0 if price is undefined
+    const productPrice = typeof product.price === 'number' ? product.price : 0; // Ensure price is a number
     return total + productPrice * product.quantity; // Calculate total
   }, 0);
 
@@ -39,7 +39,9 @@ const CartPage = () => {
             {cartItems.map(product => (
               <div key={product.id} className="flex justify-between items-center border-b py-3">
                 <span className="font-semibold">{product.name}</span>
-                <span className="text-gray-700">Price: ${product.price ? product.price.toFixed(2) : 'N/A'}</span>
+                <span className="text-gray-700">
+                  Price: ${typeof product.price === 'number' ? product.price.toFixed(2) : 'N/A'}
+                </span>
                 <span className="text-gray-700">Qty: {product.quantity}</span>
                 <button 
                   onClick={() => handleRemoveFromCart(product.id)} 

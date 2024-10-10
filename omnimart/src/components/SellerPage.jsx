@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateProduct, removeProduct } from '../features/productSlice'; // Ensure updateProduct and removeProduct are implemented in productSlice
+import { updateProduct, removeProduct, addProduct } from '../features/productSlice'; // Add addProduct here
+
 
 const SellerPage = () => {
   const dispatch = useDispatch();

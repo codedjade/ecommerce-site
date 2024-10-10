@@ -12,14 +12,29 @@ const productSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
+    setProducts(state, action) {
+      // Ensure that all products have a numeric price
+      state.products = action.payload.map(product => ({
+        ...product,
+        price: parseFloat(product.price), // Ensure price is a number
+      }));
+    },
     addProduct: (state, action) => {
-      state.products.push(action.payload);
+      // Ensure the new product has a numeric price
+      const newProduct = {
+        ...action.payload,
+        price: parseFloat(action.payload.price),
+      };
+      state.products.push(newProduct);
     },
     updateProduct: (state, action) => {
       const { id, updatedProduct } = action.payload;
       const productIndex = state.products.findIndex((product) => product.id === id);
       if (productIndex >= 0) {
-        state.products[productIndex] = updatedProduct;
+        state.products[productIndex] = {
+          ...updatedProduct,
+          price: parseFloat(updatedProduct.price), // Ensure updated price is a number
+        };
       }
     },
     removeProduct: (state, action) => {
@@ -38,5 +53,20 @@ const productSlice = createSlice({
   },
 });
 
-export const { addProduct, updateProduct, removeProduct, purchaseProduct } = productSlice.actions;
+// Fetch products from the API and set them in the state
+export const fetchProducts = () => async (dispatch) => {
+  const response = await fetch('/api/products');
+  const data = await response.json();
+  
+  // Ensure all fetched products have a numeric price
+  const productsWithValidPrices = data.map(product => ({
+    ...product,
+    price: parseFloat(product.price), // Ensure price is a number
+  }));
+  
+  dispatch(setProducts(productsWithValidPrices));
+};
+
+export const { setProducts, addProduct, updateProduct, removeProduct, purchaseProduct } = productSlice.actions;
+
 export default productSlice.reducer;
