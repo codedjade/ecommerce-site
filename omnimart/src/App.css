@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+body {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text color */
+}
+
+.navbar {
+  background-color: #1f1f1f; /* Dark navbar */
+}
+
+button {
+  background-color: #6200ea; /* Button color */
+  color: #ffffff; /* Button text color */
+}
+
+/* Add more styles as needed */
+/* Additional Global Styles */
+
+/* Navbar Styles */
+nav {
+  background-color: #1e3a8a; /* Dark Blue */
+  color: white;
+  padding: 16px;
+  position: sticky; /* Stick at the top when scrolling */
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+nav a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Cart Page Styles */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cart-item span {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cart-page button {
+  margin-top: 20px;
+  background: #3b82f6;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cart-page button:hover {
+  background: #1e3a8a;
+}
+
+/* Adjust form input width and responsiveness */
+form input[type="text"], form input[type="number"] {
+  width: calc(100% - 10px); /* Ensure full-width on small devices */
+}
+
+/* Product List Styling */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px;
+}
+
+.product-item {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.product-item h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.product-item p {
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* Update Stock Input in SellerPage */
+.product-item input {
+  width: 60px;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.product-item button {
+  margin-top: 8px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+  background-color: #1e3a8a;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #1e3a8a;
+}
