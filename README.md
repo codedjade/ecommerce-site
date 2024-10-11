@@ -37,9 +37,22 @@ To set up the OmniMart application on your local machine, follow these steps:
 
 ### Prerequisites
 
-- Node.js (version 14 or higher)
-- npm (Node Package Manager)
-- MongoDB (or any database you're using)
+#- Node.js (version 14 or higher)
+```bash
+sudo apt install nodejs.
+node -v or node –version.
+Run command to install npm: sudo apt install npm.
+Run command to verify installation of npm: npm -v or npm –version.
+```
+#- npm (Node Package Manager)
+```bash
+Run command to install npm: sudo apt install npm.
+Run command to verify installation of npm: npm -v or npm –version.
+```
+#- MongoDB (or any database you're using)
+```bash
+npm install mongodb
+```
 
 ### Clone the Repository
 
