@@ -41,8 +41,6 @@ To set up the OmniMart application on your local machine, follow these steps:
 ```bash
 sudo apt install nodejs.
 node -v or node –version.
-Run command to install npm: sudo apt install npm.
-Run command to verify installation of npm: npm -v or npm –version.
 ```
 #- npm (Node Package Manager)
 ```bash
