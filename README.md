@@ -44,8 +44,8 @@ node -v or node –version.
 ```
 #- npm (Node Package Manager)
 ```bash
-Run command to install npm: sudo apt install npm.
-Run command to verify installation of npm: npm -v or npm –version.
+sudo apt install npm.
+npm -v or npm –version.
 ```
 #- MongoDB (or any database you're using)
 ```bash
@@ -59,19 +59,12 @@ git clone https://github.com/codedjade/ecommerce-site
 cd omnimart
 ```
 
-### Install Dependencies
-
-From the root of the project, run:
-
-```bash
-npm install
-```
-
 ### Start the Backend
 
 1. Navigate to the backend directory and run the following command
 
 ```bash
+npm install
 npm start
 ```
 
@@ -79,9 +72,10 @@ npm start
 
 ### Start the Frontend
 
-In a new terminal window, navigate to the root of the project and run:
+In a new terminal window, navigate to the Omnimart folder and run:
 
 ```bash
+npm install
 npm run dev
 ```
 
