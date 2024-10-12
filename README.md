@@ -77,7 +77,12 @@ cd ..
 
 ### Start the Frontend
 
-In a new terminal window, navigate to the Omnimart folder and run:
+In a new terminal window, navigate to the Omnimart folder
+```bash
+cd ecommerce-site
+cd omnimart
+```
+and run:
 
 ```bash
 npm install
