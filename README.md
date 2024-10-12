@@ -56,6 +56,8 @@ npm install mongodb
 
 ```bash
 git clone https://github.com/codedjade/ecommerce-site
+```
+```bash
 cd omnimart
 ```
 
