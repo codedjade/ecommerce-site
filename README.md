@@ -64,8 +64,10 @@ cd omnimart
 1. Navigate to the backend directory and run the following command
 
 ```bash
+cd backend
 npm install
 npm start
+cd ..
 ```
 
 2. Ensure your MongoDB service is running (if applicable).
