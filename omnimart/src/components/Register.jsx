@@ -26,7 +26,7 @@ const Register = () => {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         required
-        className="w-full p-2 mb-4 border rounded-lg bg-gray-300" // Change background color here
+        className="w-full p-2 mb-4 border rounded-lg bg-gray-300 text-black" // Darker text color
       />
       <input
         type="password"
@@ -34,9 +34,9 @@ const Register = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
-        className="w-full p-2 mb-4 border rounded-lg bg-gray-300" // Change background color here
+        className="w-full p-2 mb-4 border rounded-lg bg-gray-300 text-black" // Darker text color
       />
-      <select value={role} onChange={(e) => setRole(e.target.value)} required className="w-full p-2 mb-4 border rounded-lg bg-gray-300">
+      <select value={role} onChange={(e) => setRole(e.target.value)} required className="w-full p-2 mb-4 border rounded-lg bg-gray-300 text-black">
         <option value="shopper">Shopper</option>
         <option value="seller">Seller</option>
         <option value="admin">Admin</option>
