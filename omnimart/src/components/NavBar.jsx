@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'; // For React Router v6
@@ -32,7 +33,7 @@ const Navbar = () => {
           <li>
             <button 
               onClick={handleLogoutUser} 
-              className="text-white hover:underline">
+              className="bg-red-700 text-white hover:bg-red-500 py-1 px-3 rounded">
               Logout
             </button>
           </li>

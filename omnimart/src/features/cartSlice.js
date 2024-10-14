@@ -8,15 +8,15 @@ const cartSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
-      const existingItem = state.items.find(item => item.id === action.payload.id);
+      const existingItem = state.items.find(product => product.id === action.payload.id);
       if (existingItem) {
         existingItem.quantity += action.payload.quantity;
       } else {
-        state.items.push(action.payload);
+        state.items.push(action.payload); // Ensure payload has name, price, etc.
       }
     },
     removeFromCart: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload);
+      state.items = state.items.filter(product => product.id !== action.payload);
     },
     checkoutCart: (state) => {
       state.items = []; // Clear the cart

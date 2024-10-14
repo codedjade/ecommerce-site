@@ -1,4 +1,4 @@
-// src/components/CartPage.jsx (or Cart.jsx)
+// src/components/CartPage.jsx
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkoutCart, removeFromCart } from '../features/cartSlice'; // Import removeFromCart
@@ -30,29 +30,29 @@ const CartPage = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-6 text-center">Your Cart</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center text-white">Your Cart</h2>
       {cartItems.length === 0 ? (
-        <p className="text-center text-lg">Your cart is empty.</p>
+        <p className="text-center text-lg text-white">Your cart is empty.</p>
       ) : (
         <>
           <div className="bg-white shadow-md rounded-lg p-4">
-            {cartItems.map(product => (
-              <div key={product.id} className="flex justify-between items-center border-b py-3">
-                <span className="font-semibold">{product.name}</span>
+            {cartItems.map(item => (
+              <div key={item.id} className="flex justify-between items-center border-b py-3">
+                <span className="font-semibold text-black">{item.name}</span>
                 <span className="text-gray-700">
-                  Price: ${typeof product.price === 'number' ? product.price.toFixed(2) : 'N/A'}
+                  Price: ${typeof item.price === 'number' ? item.price.toFixed(2) : 'N/A'}
                 </span>
-                <span className="text-gray-700">Qty: {product.quantity}</span>
+                <span className="text-gray-700">Qty: {item.quantity}</span>
                 <button 
-                  onClick={() => handleRemoveFromCart(product.id)} 
-                  className="text-red-500 hover:text-red-700 ml-4">
+                  onClick={() => handleRemoveFromCart(item.id)} 
+                  className="bg-red-700 text-white hover:bg-red-500 ml-4 py-1 px-3 rounded">
                   Remove
                 </button>
               </div>
             ))}
             <div className="flex justify-between font-bold mt-4">
-              <span>Total:</span>
-              <span>${totalPrice.toFixed(2)}</span>
+              <span className="text-black">Total:</span>
+              <span className="text-black">${totalPrice.toFixed(2)}</span>
             </div>
             <button 
               onClick={handleCheckout} 

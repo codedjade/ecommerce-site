@@ -42,7 +42,7 @@ const Home = () => {
       <div className="home-navigation mt-10">
         {currentUser ? (
           <div className="text-center">
-            <h2 className="text-2xl font-semibold text-white mb-4">Hello, {currentUser.name}!</h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">Hello, {currentUser.username}!</h2>
             <LogoutButton className="mt-4 bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700 transition duration-300" />
           </div>
         ) : (
