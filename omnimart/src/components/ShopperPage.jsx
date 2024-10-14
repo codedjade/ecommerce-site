@@ -74,11 +74,11 @@ const ShopperPage = () => {
             </p>
             <p className="text-gray-600">Seller: {product.sellerName}</p>
             <p className="text-gray-600">Contact: {product.sellerContact}</p>
+            {/* Display product quantity */}
+            <p className="text-gray-600">Available Quantity: <strong>{product.quantity}</strong></p>
             <button 
               onClick={() => handleAddToCart(product)} 
-              className={`mt-4 text-white py-2 px-4 rounded-lg transition duration-300 ${
-                product.quantity > 0 ? 'bg-primary hover:bg-secondary' : 'bg-gray-400 cursor-not-allowed'
-              }`}
+              className={`mt-4 text-white py-2 px-4 rounded-lg transition duration-300 ${product.quantity > 0 ? 'bg-primary hover:bg-secondary' : 'bg-gray-400 cursor-not-allowed'}`}
               disabled={product.quantity <= 0} // Disable button if out of stock
             >
               {product.quantity > 0 ? 'Add to Cart' : 'Out of Stock'}
