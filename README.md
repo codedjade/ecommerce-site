@@ -70,7 +70,6 @@ cd omnimart
 cd backend
 npm install
 npm start
-cd ..
 ```
 
 2. Ensure your MongoDB service is running (if applicable).
